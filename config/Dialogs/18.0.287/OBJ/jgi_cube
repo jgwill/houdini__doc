@@ -1,0 +1,986 @@
+// Magic: 106823d2
+// Automatically generated PSI dialog (PSI version 18.0.287)
+// Tue Dec 31 02:32:55 2019
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+xOrd.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    rOrd.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_scale" VALUE(s.script_action)
+	HELP("Select an object to match the scale with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+
+   p.label = PARM_LABEL("Pivot Translate", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_pivot" VALUE(p.script_action)
+	HELP("Select an object to match the pivot with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+pr.gad = ROW
+{
+   HSTRETCH
+
+   pr.label = PARM_LABEL("Pivot Rotate", "pr") WIDTH(1.5);
+   PARM(float, 3, "pr", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(pr.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_pivot_rotation" VALUE(pr.script_action)
+	HELP("Select an object to match the pivot rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+}
+
+pre_xform.gad = ROW
+{
+
+    { WIDTH(1.5) }
+    { WIDTH(0.1) }
+
+    pre_xform.menu;
+}
+
+keeppos.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    { HSTRETCH }
+
+}
+
+childcomp.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("childcomp", "Child Compensation") toggle VALUE(childcomp.val);
+
+    { HSTRETCH }
+
+}
+
+constraints_on.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("constraints_on", "Enable Constraints") toggle VALUE(constraints_on.val);
+
+    { HSTRETCH }
+
+}
+
+constraints_path.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ constraints_path.label = PARM_LABEL("Constraints", "constraints_path") WIDTH(1.5);
+ PARM_FIELD(pathstring, "constraints_path") VALUE(constraints_path.val) 
+	LABELREF(constraints_path.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(constraints_path.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(constraints_path.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+    ACTION_ICONBUTTON "BUTTONS_add_constraints" VALUE(constraints_path.script_action)
+	HELP("")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+lookatpath.gad = NULL { }
+lookupobjpath.gad = NULL { }
+lookup.gad = NULL { }
+pathobjpath.gad = NULL { }
+roll.gad = NULL { }
+pos.gad = NULL { }
+uparmtype.gad = NULL { }
+pathorient.gad = NULL { }
+up.gad = NULL { }
+bank.gad = NULL { }
+
+shop_materialpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ shop_materialpath.label = PARM_LABEL("Material", "shop_materialpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "shop_materialpath") VALUE(shop_materialpath.val) 
+	LABELREF(shop_materialpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(shop_materialpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(shop_materialpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+shop_materialopts.gad = NULL { }
+tdisplay.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val);
+
+display.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ display.label = PARM_LABEL("Display", "display") WIDTH(1.32);
+ PARM(integer, 1, "display", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+viewportlod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Display As", "viewportlod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viewportlod.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_rendervisibility.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    vm_rendervisibility.label = PARM_LABEL("Render Visibility", "vm_rendervisibility") WIDTH(1.5);
+    PARM_FIELD(string, "vm_rendervisibility") VALUE(vm_rendervisibility.val) 
+	LABELREF(vm_rendervisibility.label) HSTRETCH;
+
+    vm_rendervisibility.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+}
+
+vm_rendersubd.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_rendersubd", "Render Polygons As Subdivision (Mantra)") toggle VALUE(vm_rendersubd.val);
+
+    { HSTRETCH }
+
+}
+
+vm_subdstyle.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Subdivision Style", "vm_subdstyle") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_subdstyle.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_subdgroup.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    vm_subdgroup.label = PARM_LABEL("Subdivision Group", "vm_subdgroup") WIDTH(1.5);
+    PARM_FIELD(string, "vm_subdgroup") VALUE(vm_subdgroup.val) 
+	LABELREF(vm_subdgroup.label) HSTRETCH;
+
+}
+
+vm_osd_quality.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vm_osd_quality.label = PARM_LABEL("Open Subdiv Quality", "vm_osd_quality") WIDTH(1.5);
+ PARM(float, 1, "vm_osd_quality", none, none) RANGE(0,10)
+	 LABELREF(vm_osd_quality.label) HSTRETCH;
+
+}
+
+vm_osd_vtxinterp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("OSD Vtx Interp", "vm_osd_vtxinterp") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_osd_vtxinterp.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_osd_fvarinterp.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("OSD FVar Interp", "vm_osd_fvarinterp") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_osd_fvarinterp.menu;
+
+    { HSTRETCH }
+
+}
+
+categories.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    categories.label = PARM_LABEL("Categories", "categories") WIDTH(1.5);
+    PARM_FIELD(string, "categories") VALUE(categories.val) 
+	LABELREF(categories.label) HSTRETCH;
+
+}
+
+reflectmask.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ reflectmask.label = PARM_LABEL("Reflection Mask", "reflectmask") WIDTH(1.5);
+ PARM_FIELD (pathstring, "reflectmask") LABELREF(reflectmask.label) 
+	VALUE(reflectmask.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(reflectmask.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+refractmask.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ refractmask.label = PARM_LABEL("Refraction Mask", "refractmask") WIDTH(1.5);
+ PARM_FIELD (pathstring, "refractmask") LABELREF(refractmask.label) 
+	VALUE(refractmask.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(refractmask.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+lightmask.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ lightmask.label = PARM_LABEL("Light Mask", "lightmask") WIDTH(1.5);
+ PARM_FIELD (pathstring, "lightmask") LABELREF(lightmask.label) 
+	VALUE(lightmask.val) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lightmask.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+lightcategories.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    lightcategories.label = PARM_LABEL("Light Selection", "lightcategories") WIDTH(1.5);
+    PARM_FIELD(string, "lightcategories") VALUE(lightcategories.val) 
+	LABELREF(lightcategories.label) HSTRETCH;
+
+}
+
+vm_lpetag.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    vm_lpetag.label = PARM_LABEL("LPE Tag", "vm_lpetag") WIDTH(1.5);
+    PARM_FIELD(string, "vm_lpetag") VALUE(vm_lpetag.val) 
+	LABELREF(vm_lpetag.label) HSTRETCH;
+
+}
+
+vm_volumefilter.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Volume Filter", "vm_volumefilter") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_volumefilter.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_volumefilterwidth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vm_volumefilterwidth.label = PARM_LABEL("Volume Filter Width", "vm_volumefilterwidth") WIDTH(1.5);
+ PARM(float, 1, "vm_volumefilterwidth", none, none) RANGE(0.001,5)
+	 LABELREF(vm_volumefilterwidth.label) HSTRETCH;
+
+}
+
+vm_matte.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_matte", "Matte shading") toggle VALUE(vm_matte.val);
+
+    { HSTRETCH }
+
+}
+
+vm_rayshade.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_rayshade", "Raytrace Shading") toggle VALUE(vm_rayshade.val);
+
+    { HSTRETCH }
+
+}
+
+geo_velocityblur.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Geometry Velocity Blur", "geo_velocityblur") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    geo_velocityblur.menu;
+
+    { HSTRETCH }
+
+}
+
+geo_accelattribute.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    geo_accelattribute.label = PARM_LABEL("Acceleration Attribute", "geo_accelattribute") WIDTH(1.5);
+    PARM_FIELD(string, "geo_accelattribute") VALUE(geo_accelattribute.val) 
+	LABELREF(geo_accelattribute.label) HSTRETCH;
+
+}
+
+vm_shadingquality.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vm_shadingquality.label = PARM_LABEL("Shading Quality", "vm_shadingquality") WIDTH(1.5);
+ PARM(float, 1, "vm_shadingquality", none, none) RANGE(0,10)
+	 LABELREF(vm_shadingquality.label) HSTRETCH;
+
+}
+
+vm_flatness.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vm_flatness.label = PARM_LABEL("Dicing Flatness", "vm_flatness") WIDTH(1.5);
+ PARM(float, 1, "vm_flatness", none, none) RANGE(0,1)
+	 LABELREF(vm_flatness.label) HSTRETCH;
+
+}
+
+vm_raypredice.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Ray Predicing", "vm_raypredice") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_raypredice.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_curvesurface.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_curvesurface", "Shade Curves As Surfaces") toggle VALUE(vm_curvesurface.val);
+
+    { HSTRETCH }
+
+}
+
+vm_rmbackface.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_rmbackface", "Backface Removal") toggle VALUE(vm_rmbackface.val);
+
+    { HSTRETCH }
+
+}
+
+shop_geometrypath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ shop_geometrypath.label = PARM_LABEL("Procedural Shader", "shop_geometrypath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "shop_geometrypath") VALUE(shop_geometrypath.val) 
+	LABELREF(shop_geometrypath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(shop_geometrypath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(shop_geometrypath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+vm_forcegeometry.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_forcegeometry", "Force Procedural Geometry Output") toggle VALUE(vm_forcegeometry.val);
+
+    { HSTRETCH }
+
+}
+
+vm_rendersubdcurves.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_rendersubdcurves", "Render Polygon Curves As Subdivision (Mantra)") toggle VALUE(vm_rendersubdcurves.val);
+
+    { HSTRETCH }
+
+}
+
+vm_renderpoints.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Render As Points (Mantra)", "vm_renderpoints") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_renderpoints.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_renderpointsas.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Render Points As (Mantra)", "vm_renderpointsas") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_renderpointsas.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_usenforpoints.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_usenforpoints", "Use N For Point Rendering") toggle VALUE(vm_usenforpoints.val);
+
+    { HSTRETCH }
+
+}
+
+vm_pointscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vm_pointscale.label = PARM_LABEL("Point Scale", "vm_pointscale") WIDTH(1.5);
+ PARM(float, 1, "vm_pointscale", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(vm_pointscale.label) HSTRETCH;
+
+}
+
+vm_pscalediameter.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_pscalediameter", "Treat Point Scale as Diameter Instead of Radius") toggle VALUE(vm_pscalediameter.val);
+
+    { HSTRETCH }
+
+}
+
+vm_metavolume.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_metavolume", "Metaballs as Volume") toggle VALUE(vm_metavolume.val);
+
+    { HSTRETCH }
+
+}
+
+vm_coving.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Coving", "vm_coving") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_coving.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_materialoverride.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Material Override", "vm_materialoverride") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vm_materialoverride.menu;
+
+    { HSTRETCH }
+
+}
+
+vm_overridedetail.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_overridedetail", "Ignore Geometry Attribute Shaders") toggle VALUE(vm_overridedetail.val);
+
+    { HSTRETCH }
+
+}
+
+vm_procuseroottransform.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vm_procuseroottransform", "Proc Use Root Transform") toggle VALUE(vm_procuseroottransform.val);
+
+    { HSTRETCH }
+
+}
+
+use_dcolor.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("use_dcolor", "Set Wireframe Color") toggle VALUE(use_dcolor.val);
+
+    { HSTRETCH }
+
+}
+
+dcolor.gad = 
+{
+    LAYOUT (horizontal) HSTRETCH
+
+    dcolor.label = PARM_LABEL("Wireframe Color", "dcolor") WIDTH(1.5);
+    PARM(float, 3, "dcolor", none, COLOR, "R,G,B") 
+	LABELREF(dcolor.label) HSTRETCH;
+
+}
+
+picking.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("picking", "Viewport Selecting Enabled") toggle VALUE(picking.val);
+
+    { HSTRETCH }
+
+}
+
+pickscript.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ pickscript.label = PARM_LABEL("Select Script", "pickscript") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "pickscript") LABELREF(pickscript.label)
+	VALUE(pickscript.val) HSTRETCH;
+
+    pickscript.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(pickscript.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+caching.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caching", "Cache Object Transform") toggle VALUE(caching.val);
+
+    { HSTRETCH }
+
+}
+
+vport_shadeopen.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vport_shadeopen", "Shade Open Curves In Viewport") toggle VALUE(vport_shadeopen.val);
+
+    { HSTRETCH }
+
+}
+vport_displayassubdiv.gad = NULL { }
+
+vport_onionskin.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Onion Skinning", "vport_onionskin") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    vport_onionskin.menu;
+
+    { HSTRETCH }
+
+}
+
+renderable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("renderable", "Renderable") toggle VALUE(renderable.val);
+
+    { HSTRETCH }
+
+}
+
+folder0.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder0.gad"
+    { 
+	VALUE(folder0.gad.val) STRETCH(1,0)
+
+	TAB "Shading"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    categories.gad;		
+	    reflectmask.gad;		
+	    refractmask.gad;		
+	    lightmask.gad;		
+	    lightcategories.gad;		
+	    vm_lpetag.gad;		
+	    vm_volumefilter.gad;		
+	    vm_volumefilterwidth.gad;		
+	    vm_matte.gad;		
+	    vm_rayshade.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Sampling"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    geo_velocityblur.gad;		
+	    geo_accelattribute.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Dicing"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    vm_shadingquality.gad;		
+	    vm_flatness.gad;		
+	    vm_raypredice.gad;		
+	    vm_curvesurface.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Geometry"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    vm_rmbackface.gad;		
+	    shop_geometrypath.gad;		
+	    vm_forcegeometry.gad;		
+	    vm_rendersubdcurves.gad;		
+	    vm_renderpoints.gad;		
+	    vm_renderpointsas.gad;		
+	    vm_usenforpoints.gad;		
+	    vm_pointscale.gad;		
+	    vm_pscalediameter.gad;		
+	    vm_metavolume.gad;		
+	    vm_coving.gad;		
+	    vm_materialoverride.gad;		
+	    vm_overridedetail.gad;		
+	    vm_procuseroottransform.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+stdswitcher4.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "stdswitcher4.gad"
+    { 
+	VALUE(stdswitcher4.gad.val) STRETCH(1,0)
+
+	TAB "Transform"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    xOrd.row.join;		
+	    t.gad;		
+	    r.gad;		
+	    s.gad;		
+	    p.gad;		
+	    pr.gad;		
+	    scale.gad;		
+	    pre_xform.gad;		
+	    keeppos.gad;		
+	    childcomp.gad;		
+	    constraints_on.gad;		
+	    constraints_path.gad;		
+	    lookatpath.gad;		
+	    lookupobjpath.gad;		
+	    lookup.gad;		
+	    pathobjpath.gad;		
+	    roll.gad;		
+	    pos.gad;		
+	    uparmtype.gad;		
+	    pathorient.gad;		
+	    up.gad;		
+	    bank.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Render"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    shop_materialpath.gad;		
+	    shop_materialopts.gad;		
+	    tdisplay.row.join;		
+	    viewportlod.gad;		
+	    vm_rendervisibility.gad;		
+	    vm_rendersubd.gad;		
+	    vm_subdstyle.gad;		
+	    vm_subdgroup.gad;		
+	    vm_osd_quality.gad;		
+	    vm_osd_vtxinterp.gad;		
+	    vm_osd_fvarinterp.gad;		
+	    folder0.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Misc"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    use_dcolor.gad;		
+	    dcolor.gad;		
+	    picking.gad;		
+	    pickscript.gad;		
+	    caching.gad;		
+	    vport_shadeopen.gad;		
+	    vport_displayassubdiv.gad;		
+	    vport_onionskin.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    stdswitcher4.gad; 
+    renderable.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

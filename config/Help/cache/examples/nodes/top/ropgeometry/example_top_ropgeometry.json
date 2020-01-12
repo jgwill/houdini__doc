@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_ropgeometry"]}, {"indent": 0, "type": "para", "extent": [0, 73], "text": ["This example demonstrates how to use the ROP Geometry node in PDG/TOPs."]}], "examplefile": "/examples/nodes/top/ropgeometry/example_top_ropgeometry.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/ropgeometry"}

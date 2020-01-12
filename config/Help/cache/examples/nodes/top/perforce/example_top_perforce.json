@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_perforce"]}, {"indent": 0, "type": "para", "extent": [0, 71], "text": ["This example demonstrates how to perform multiple perforce operations."]}], "examplefile": "/examples/nodes/top/perforce/example_top_perforce.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/perforce"}

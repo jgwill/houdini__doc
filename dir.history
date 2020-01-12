@@ -1,0 +1,62 @@
+HIP
+{
+/mnt/hq/projects/
+/home/jgi/nad.previz/x/x__cloud__191226/
+/home/jgi/
+/home/jgi/nad.previz/x/x__lava__191217/
+/home/jgi/nad.previz/x/x__for_fun__191122/
+}
+PIC
+{
+$HOME/VFXProjects/hundred/assets/environment_lightning/hdr029_sky_cloudy_/
+$HOME/nad.previz/x/x__for_fun__191122/render/explo2/
+$HIP/render/$HIPNAME/$OS/
+$HOME/nad.previz/x/x__for_fun__191122/render/explo2/$OS/
+$HOME/VFXProjects/hundred/assets/environment_lightning/hdr_sky04__GreenwichPark/
+$HOME/VFXProjects/hundred/assets/environment_lightning/hdr06__TheSkyIsOnFire/
+$HIP/render/explode/exploburn01/
+$HIP/render/exploburn02/
+$HIP/comp/$OS/
+$HOME/nad.previz/x/x__for_fun__191122/render/pyroexplosionshader/
+$HASSETS/environment_lightning/hdr06__TheSkyIsOnFire/
+}
+GEO
+{
+$HOUDINI_CACHE/fog_from_dropping/sim_particle/
+$HOUDINI_CACHE/fog_from_dropping/fluid_particle/
+$HOUDINI_CACHE/terrainfx_01/
+$HIP/geo/
+$HOUDINI_CACHE/pyroexplosionshader/$OS/
+$HOUDINI_CACHE/fog_from_dropping03/sim_particle/
+$HOUDINI_CACHE/fog_from_dropping03/src_particle/
+$HOUDINI_CACHE/fog_from_dropping04/src_particle/
+$HOUDINI_CACHE/fog_from_dropping04/sim_particle/
+$HOUDINI_CACHE/fog_from_dropping04/fluid_particle/
+$HHOUDINI_CACHE/$HIPNAME/$OS/
+$HOUDINI_CACHE/$HIPNAME/$OS/
+}
+OTL
+{
+/opt/hfs18.0.287/houdini/otls/
+/home/jgi/houdini18.0/otls/
+/opt/hfs18.0.287/houdini/help/examples/nodes/top/attributecopy/
+}
+MISC
+{
+$HIP/render/
+unix hwatermark -x 4 10 -m \"Wedge: $WEDGENUM\" `chs("vm_picture")` `chs("vm_picture")` $HFS/houdini/fonts/
+unix hwatermark -x 4 10 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 9 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 8 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 7 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 6 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 5 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 4 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
+unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM $ACTIVETAKE \" `` $HFS/houdini/fonts/
+$HIP/render/$HIPNAME/
+}
+GAL
+{
+/home/jgi/houdini18.0/gallery/
+}

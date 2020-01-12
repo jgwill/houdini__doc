@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["animals"]}, {"indent": 0, "type": "para", "extent": [0, 117], "text": ["name-animal_type-image_path\nBella-cat-myImages-bella.jpg\nMoo-cow-myImages/moo.jpg\nSqueaky-mouse-myImages/squeaky.jpg"]}], "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/texttocsv"}

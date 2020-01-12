@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_fileremove"]}, {"indent": 0, "type": "para", "extent": [0, 74], "text": ["This example demonstrates how to remove a file using the Remove File node."]}], "examplefile": "/examples/nodes/top/fileremove/example_top_fileremove.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/fileremove"}

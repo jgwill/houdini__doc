@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_null"]}, {"indent": 0, "type": "para", "extent": [0, 51], "text": ["This example demonstrates the usage of null nodes."]}], "examplefile": "/examples/nodes/top/null/example_top_null.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/null"}

@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_invoke"]}, {"indent": 0, "type": "para", "extent": [0, 77], "text": ["This example demonstrates how to run compiled blocks using pdg data as input."]}], "examplefile": "/examples/nodes/top/invoke/example_top_invoke.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/invoke"}

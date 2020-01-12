@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["ColorVex"]}, {"indent": 0, "type": "para", "extent": [0, 110], "text": ["This example shows three different ways to use VEXpressions \nin your POP Color node to color your particles."]}], "examplefile": "/examples/nodes/dop/popcolor/ColorVex.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/popcolor"}

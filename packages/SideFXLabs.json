@@ -1,0 +1,16 @@
+{
+    "path": "/home/jgi/houdini18.0/SideFXLabs/299 (local)", 
+    "env": [
+        {
+            "sidefxlabs_current_version": "299 (local)"
+        }, 
+        {
+            "PATH": {
+                "method": "prepend", 
+                "value": [
+                    "/home/jgi/houdini18.0/SideFXLabs/299 (local)/bin"
+                ]
+            }
+        }
+    ]
+}

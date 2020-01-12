@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_texttocsv"]}, {"indent": 0, "type": "para", "extent": [0, 71], "text": ["This example demonstrates how to use the Text to CSV node in PDG/TOPs."]}], "examplefile": "/examples/nodes/top/texttocsv/example_top_texttocsv.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/texttocsv"}

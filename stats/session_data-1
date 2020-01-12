@@ -1,0 +1,54 @@
+{
+	"stats":{
+		"start_time":1578661102,
+		"end_time":1578866634,
+		"idle_time":204111,
+		"log_id":"0xFEA59A7D-0x2B14C3FC-0x5E1874EF-0x000005CD",
+		"persistent_stats":{
+			"colors_scheme":"Houdini Dark"
+		},
+		"flags":[
+		],
+		"counts":{
+			"hotkey/h.paste":1,
+			"hotkey/h.copy":3,
+			"tools/network/Chop|chop_trigger":1,
+			"hotkey/h.open":1,
+			"tools/network/Chop|chop_delay":1,
+			"tools/network/Driver|driver_shell":2,
+			"tools/network/Top|top_ropfetch":1,
+			"tools/network/Top|top_hqueuescheduler":1,
+			"tools/network/Chop|chop_record":1,
+			"hotkey/h.pane.wsheet.cancel_cook":1,
+			"tools/network/Object|object_chopnet":1,
+			"tools/network/Driver|driver_prepost":1,
+			"hotkey/h.save":11,
+			"tools/network/Top|top_remotegraph":1
+		},
+		"logs":{
+		},
+		"sums_and_counts":{
+		},
+		"strings":{
+		},
+		"checksum":"511a5fda4a848ad0dd4062d88312335d"
+	},
+	"machine_config":{
+		"houdini_major_version":"18",
+		"houdini_minor_version":"0",
+		"houdini_build_version":"287",
+		"application_name":"hindie",
+		"license_category":"Indie",
+		"platform":"linux-x86_64-gcc6.3",
+		"operating_system":"Ubuntu 18.04.2 LTS",
+		"number_of_processors":4,
+		"system_memory":"7.64 GB",
+		"graphics_card":"Mesa DRI Intel(R) HD Graphics 520 (Skylake GT2) ",
+		"graphics_card_version":"4.5 (Core Profile) Mesa 19.0.2",
+		"mac_address_hash":"c6bb0a71ff8fe1b93c1d8dc2aab6e436",
+		"user_config_version":20140523,
+		"system_resolution":"1920x1080",
+		"cpu_info":"Intel(R) Core(TM) i3-6100U CPU @ 2.30GHz",
+		"config_hash":"b31f22525aa76be8f1bbf36a302202cb"
+	}
+}

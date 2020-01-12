@@ -1,0 +1,73 @@
+// Magic: 1f6d4313
+// Automatically generated PSI dialog (PSI version 18.0.287)
+// Mon Dec 30 00:14:33 2019
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+
+depth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ depth.label = PARM_LABEL("Depth", "depth") WIDTH(1.5);
+ PARM(float, 1, "depth", none, none) RANGE(0,10)
+	 LABELREF(depth.label) HSTRETCH;
+
+}
+
+both_directions.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("both_directions", "Both Directions") toggle VALUE(both_directions.val);
+
+    { HSTRETCH }
+
+}
+
+reduce_back.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reduce_back", "Reduce Back Side") toggle VALUE(reduce_back.val);
+
+    { HSTRETCH }
+
+}
+
+reduction_percentage.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ reduction_percentage.label = PARM_LABEL("Reduction Percentage", "reduction_percentage") WIDTH(1.5);
+ PARM(float, 1, "reduction_percentage", none, none) RANGE(0,100)
+	 LABELREF(reduction_percentage.label) HSTRETCH;
+
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    depth.gad; 
+    both_directions.gad; 
+    reduce_back.gad; 
+    reduction_percentage.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

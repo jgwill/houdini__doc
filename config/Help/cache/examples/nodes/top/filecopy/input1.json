@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["input1"]}, {"indent": 0, "type": "para", "extent": [0, 55], "text": ["This is the first input for the PDG copyfile node test."]}], "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/filecopy"}

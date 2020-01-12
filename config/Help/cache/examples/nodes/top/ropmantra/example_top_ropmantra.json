@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_ropmantra"]}, {"indent": 0, "type": "para", "extent": [0, 71], "text": ["This example demonstrates how to use the ROP Mantra node in PDG/TOPs."]}], "examplefile": "/examples/nodes/top/ropmantra/example_top_ropmantra.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/ropmantra"}

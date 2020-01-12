@@ -1,0 +1,87 @@
+HIP
+{
+/home/jgi/nad.previz/x/x__for_fun__191122/pyroexplosionshader__volcano_transforming.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/fog_from_dropping_particle__05.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/volcano_smoke_column.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/pyroexplosionshader.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/explo_observer.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/explo_pressure.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/explo_cyl.hiplc
+/home/jgi/nad.previz/x/x__lava__191217/x__lava__191227__28__01__ewave_mountain.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/wedge.hiplc
+/home/jgi/nad.previz/x/x__for_fun__191122/pdg_server.hiplc
+/home/jgi/nad.previz/x/x__mutagen__200109/fireball__mutagen3.hiplc
+/home/jgi/nad.previz/x/x__mutagen__200109/fireball__mutagen3_queue.hiplc
+}
+PIC
+{
+$HOME/nad.previz/x/x__for_fun__191122/render/explo2/$OS/$F4.exr
+$HOME/nad.previz/x/x__for_fun__191122/render/explo2/$OS/$F4.jpg
+$HOME/VFXProjects/hundred/assets/environment_lightning/hdr_sky04__GreenwichPark/greenwich_park_2k.hdr
+$HOME/VFXProjects/hundred/assets/environment_lightning/hdr06__TheSkyIsOnFire/the_sky_is_on_fire_2k.hdr
+$HIP/render/explode/exploburn01/$F4.jpg
+$HIP/render/exploburn02/$F4.jpg
+$HIP/comp/$OS/$F4.jpg
+$HIP/render/pyroexplosionshader/$F4.exr
+$HIP/render/pyroexplosionshader/mb/$F4.exr
+$HIP/comp/$HIPNAME__$OS/$F4.jpg
+$HOME/nad.previz/x/x__for_fun__191122/render/pyroexplosionshader/$F4.exr
+$HASSETS/environment_lightning/hdr06__TheSkyIsOnFire/the_sky_is_on_fire_4k.hdr
+}
+GEO
+{
+$HIP/geo/fem__fracture_cube.filecache1.bgeo.sc
+$HIP/geo/cubreak01.bgeo.sc
+$HIP/geo/cubreak02.bgeo.sc
+$HOUDINI_CACHE/pyroexplosionshader/$OS/$F.bgeo.sc
+$HOUDINI_CACHE/fog_from_dropping03/sim_particle/$OS.$F.bgeo.sc
+$HOUDINI_CACHE/fog_from_dropping03/src_particle/$OS.$F.bgeo.sc
+$HOUDINI_CACHE/fog_from_dropping04/src_particle/$OS.$F.bgeo.sc
+$HOUDINI_CACHE/fog_from_dropping04/sim_particle/$OS.$F.bgeo.sc
+$HOUDINI_CACHE/fog_from_dropping04/fluid_particle/$OS.$F.bgeo.sc
+$HHOUDINI_CACHE/$HIPNAME/$OS/$F.bgeo.sc
+$HOUDINI_CACHE/$HIPNAME/$OS/$F.bgeo.sc
+$HOUDINI_CACHE/$HIPNAME/$OS/$F4.bgeo.sc
+}
+FONT
+{
+Lato Bold
+}
+OTL
+{
+/opt/hfs18.0.287/houdini/otls/OPlibObject.hda
+/opt/hfs18.0.287/houdini/otls/OPlibLegacyAutoRig.hda
+/opt/hfs18.0.287/houdini/otls/OPlibMocap.hda
+/opt/hfs18.0.287/houdini/otls/OPlibScripted.hda
+/opt/hfs18.0.287/houdini/otls/OPlibPlaceholder.hda
+/opt/hfs18.0.287/houdini/otls/OPlibPopDop.hda
+/opt/hfs18.0.287/houdini/otls/OPlibAutoRigs.hda
+/opt/hfs18.0.287/houdini/otls/OPlibTop.hda
+/opt/hfs18.0.287/houdini/otls/OPlibMuscle.hda
+/opt/hfs18.0.287/houdini/otls/OPlibChop.hda
+/home/jgi/houdini18.0/otls/jgi_cube.hdalc
+/opt/hfs18.0.287/houdini/help/examples/nodes/top/attributecopy/example_top_attributecopy.hda
+}
+MISC
+{
+$HIP/render/$HIPNAME/tst_$WEDGE_$ACTIVETAKE__$F4.jpg
+unix hwatermark -x 4 9 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 8 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 7 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 6 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 5 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 4 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM $ACTIVETAKE \" `` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
+$HIP/render/$HIPNAME/tst_$WEDGE__$WEDGENUM_$ACTIVETAKE__$F4.jpg
+$HIP/render/$HIPNAME/tst2_$WEDGE__$WEDGENUM_$ACTIVETAKE__$F4.jpg
+system "echo allo"
+}
+GAL
+{
+/home/jgi/houdini18.0/gallery/Custom.gal
+}
+PRJ
+{
+/home/jgi/nad.previz/x/x__lava__191217/
+}

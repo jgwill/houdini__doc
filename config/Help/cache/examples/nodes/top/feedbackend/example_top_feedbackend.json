@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_feedbackend"]}, {"indent": 0, "type": "para", "extent": [0, 57], "text": ["This example demonstrates how to create a feedback loop."]}], "examplefile": "/examples/nodes/top/feedbackend/example_top_feedbackend.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/feedbackend"}

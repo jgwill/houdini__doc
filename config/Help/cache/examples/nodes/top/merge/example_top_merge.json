@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_merge"]}, {"indent": 0, "type": "para", "extent": [0, 65], "text": ["This example demonstrates how to use the merge node in PDG/TOPs."]}], "examplefile": "/examples/nodes/top/merge/example_top_merge.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/merge"}

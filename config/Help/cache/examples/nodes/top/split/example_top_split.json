@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["example_top_split"]}, {"indent": 0, "type": "para", "extent": [0, 65], "text": ["This example demonstrates how to use the split node in PDG/TOPs."]}], "examplefile": "/examples/nodes/top/split/example_top_split.hda", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/top/split"}
