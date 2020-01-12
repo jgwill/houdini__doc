@@ -1,0 +1,47 @@
+{
+	"stats":{
+		"start_time":1578858464,
+		"end_time":1578870206,
+		"idle_time":10232,
+		"log_id":"0xC5781DF6-0x00006768-0x5E1B77E1-0x000004DC",
+		"persistent_stats":{
+			"colors_scheme":"Houdini Dark"
+		},
+		"flags":[
+		],
+		"counts":{
+			"hotkey/h.copy":1,
+			"tools/shelf|(custom_tool)":4,
+			"tools/network/Top|top_wedge":2,
+			"hotkey/h.undo":6,
+			"hotkey/inputfield.prev":1,
+			"hotkey/h.save_as":1,
+			"hotkey/h.save":12
+		},
+		"logs":{
+		},
+		"sums_and_counts":{
+		},
+		"strings":{
+		},
+		"checksum":"08e2c44ae88913aa55034638a48df55e"
+	},
+	"machine_config":{
+		"houdini_major_version":"18",
+		"houdini_minor_version":"0",
+		"houdini_build_version":"287",
+		"application_name":"hindie",
+		"license_category":"Indie",
+		"platform":"windows-x86_64-cl19.16",
+		"operating_system":"Windows 10 Pro x64",
+		"number_of_processors":12,
+		"system_memory":"31.86 GB",
+		"graphics_card":"GeForce RTX 2070 with Max-Q Design/PCIe/SSE2",
+		"graphics_card_version":"4.6.0 NVIDIA 431.11",
+		"mac_address_hash":"c73e12bb71c0b2d927afd8609cb72d54",
+		"user_config_version":20140523,
+		"system_resolution":"3840x2160",
+		"cpu_info":"Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz",
+		"config_hash":"548a944e97f4572c0f59edcf5970504b"
+	}
+}

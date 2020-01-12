@@ -1,0 +1,16 @@
+{
+    "path": "C:/Users/jeang/Documents/houdini18.0/SideFXLabs/297 (local)", 
+    "env": [
+        {
+            "sidefxlabs_current_version": "297 (local)"
+        }, 
+        {
+            "PATH": {
+                "method": "prepend", 
+                "value": [
+                    "C:/Users/jeang/Documents/houdini18.0/SideFXLabs/297 (local)/bin"
+                ]
+            }
+        }
+    ]
+}
