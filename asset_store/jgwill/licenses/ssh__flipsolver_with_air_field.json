@@ -1,0 +1,8 @@
+{
+    "expires_utc_timestamp": null, 
+    "license_number": 241312, 
+    "node_type_name": "ssh::flipsolver_with_air_field", 
+    "owner": "jgwill", 
+    "category_name": "Dop", 
+    "allowed_use": "apprentice"
+}

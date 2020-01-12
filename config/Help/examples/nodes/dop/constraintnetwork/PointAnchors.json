@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["PointAnchors"]}, {"indent": 0, "type": "para", "extent": [0, 80], "text": ["This example shows how to create a basic constraint network with point anchors."]}], "examplefile": "/examples/nodes/dop/constraintnetwork/PointAnchors.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/constraintnetwork"}

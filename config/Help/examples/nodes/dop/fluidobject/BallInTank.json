@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["BallInTank"]}, {"indent": 0, "type": "para", "extent": [0, 67], "text": ["This example shows an RBD ball being thrown into a tank of liquid."]}], "examplefile": "/examples/nodes/dop/fluidobject/BallInTank.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/fluidobject"}

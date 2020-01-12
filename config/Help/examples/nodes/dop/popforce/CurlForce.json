@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["CurlForce"]}, {"indent": 0, "type": "para", "extent": [0, 105], "text": ["This example demonstrates how to use the POP Force \nnode to add curl noise to your particle simulation."]}], "examplefile": "/examples/nodes/dop/popforce/CurlForce.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/popforce"}

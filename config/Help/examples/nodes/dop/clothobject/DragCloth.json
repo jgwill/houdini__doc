@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["DragCloth"]}, {"indent": 0, "type": "para", "extent": [0, 100], "text": ["This example shows how adding Normal and Tanget Drag \nto a cloth object can influence its behaviour."]}], "examplefile": "/examples/nodes/dop/clothobject/DragCloth.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/clothobject"}

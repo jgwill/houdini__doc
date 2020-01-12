@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shelfDocument>
+  <!-- This file contains definitions of shelves, toolbars, and tools.
+ It should not be hand-edited when it is being used by the application.
+ Note, that two definitions of the same element are not allowed in
+ a single file. -->
+
+  <toolshelf name="shelf_x1909" label="x1909">
+    <memberTool name="CreateGeo"/>
+  </toolshelf>
+
+  <tool name="CreateGeo" label="cGeo01" icon="$HOME/Pictures/1x/baseline_offline_pin_black_18dp.png">
+    <script scriptType="python"><![CDATA[import hou
+
+# Get scene root node
+sceneRoot = hou.node('/obj/')
+# Create empty "MY_GEO" geometry node in scene root
+sceneRoot.createNode('geo', 'MY_GEO', run_init_scripts=False)
+sceneRoot.createNode('matnet', 'mymat', run_init_scripts=False)]]></script>
+  </tool>
+
+  <shelfSetEdit name="shelf_set_1" fileLocation="/opt/hfs17.5.425/houdini/toolbar/ShelfDefinitions.shelf">
+    <addMemberToolshelf name="games_development_toolset" inPosition="16"/>
+  </shelfSetEdit>
+</shelfDocument>

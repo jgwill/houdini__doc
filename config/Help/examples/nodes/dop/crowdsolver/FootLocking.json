@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["FootLocking"]}, {"indent": 0, "type": "para", "extent": [0, 67], "text": ["This example demonstrates how to set up foot locking for an agent."]}], "examplefile": "/examples/nodes/dop/crowdsolver/FootLocking.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/crowdsolver"}

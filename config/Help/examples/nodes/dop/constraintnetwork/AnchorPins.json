@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["AnchorPins"]}, {"indent": 0, "type": "para", "extent": [0, 86], "text": ["This example demonstrates how different anchor positions \ncan affect pin constraints."]}], "examplefile": "/examples/nodes/dop/constraintnetwork/AnchorPins.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/constraintnetwork"}

@@ -1,0 +1,129 @@
+{
+	"organization":{
+		"guid":"0xD135A81A-0xD5A211E9-0xA8F34485-0x00E5E016",
+		"type":"folder",
+		"name":"",
+		"entries":[
+			{
+				"guid":"0xD64941FE-0xD5A211E9-0xA8F34485-0x00E5E016",
+				"type":"folder",
+				"name":"Landscape",
+				"entries":[
+					{
+						"otl_file":"SideFX__heightmapterraingenerator.otl",
+						"rating":4,
+						"update_available":false,
+						"descriptive_name":"Height Map Terrain Generator",
+						"description":"Create terrain from black and white images.\n\nSimply feed a standard 8, 16 or 32 bit black and white height map and watch your mountains grow!\n\nOptions for simplifying, smoothing and texturing your terrain as well as a \"create higher res patch\" option in case you need extra detail in just one area.\n\nThanks to Ziggy Ostertag who supplied the original file from which this asset was derived.\n-------------------\nFAQ\n\nQ: I can't see my geometry, where is it?\nA:by default the asset creates a mesh that is 1 vertex for every pixel in\nthe source image. The relative size of these meshes are often HUGE....so\ngiant that you have to zoom out to see it.\n\nTwo things to try:\nSelect the terrain node in the network view. then  move your mouse over\nthe  main 3d viewport and hit  space-g. This will home the view to what\never is selected.\n\nOr you could  just scale the whole terrain to .1 and see if it's visible.\n\nIf that doesn't do it, then go to the heightmap image pulldown menu and\nselect one of the default images.\n\nIf you have used a custom image, then check the following:\nIf you are using a standard jpeg, you should be plugging it in under the\n8-bit pulldown.\nIf you have an HDR,EXR, tiff16 or tiff 32 then use the pulldown under the\n16-32 bit image area.\n\n\nAlso, if your  custom image has all values which are ALL  slightly higher\nthat 0,0,0 (total black)\nThen your terrain will be slightly higher than you might  expect...maybe\nseveral hundred meters!\n","created_utc_timestamp":1343069960,"type":"asset","creator":"SideFX","version_sequence_number":8,"node_type_name":"SideFX::heightmapterraingenerator","num_votes":1,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0xD64941FF-0xD5A211E9-0xA8F34485-0x00E5E016",
+						"default_folder":"Landscape",
+						"icon":"SideFX__heightmapterraingenerator.png"
+					}
+				]
+			},
+			{
+				"guid":"0xF091CDA0-0xD5BC11E9-0xA8F34485-0x00E5E016",
+				"type":"folder",
+				"name":"Effect",
+				"entries":[
+					{
+						"otl_file":"SideFX__flipfountain.otl",
+						"rating":5,
+						"update_available":false,
+						"descriptive_name":"Flip Fountain",
+						"description":"This asset creates a fountain flip fluid setup. Controls include various emission properties for the water as well as the foam. It includes a default builtin model as well as the option for custom geometry. This asset has been create so it will work seamlessly with Houdini Engine and the Maya Plugin.","created_utc_timestamp":1405457343,"type":"asset","creator":"SideFX","version_sequence_number":1,"node_type_name":"SideFX::flipfountain","num_votes":1,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0xF091CDA1-0xD5BC11E9-0xA8F34485-0x00E5E016",
+						"default_folder":"Effect",
+						"icon":"SideFX__flipfountain.png"
+					},
+					{
+						"otl_file":"SideFX__bonfire.otl",
+						"rating":4,
+						"update_available":false,
+						"descriptive_name":"Bonfire",
+						"description":"Creates a bonfire using Houdini's Pyro FX 2. \n\nUse custom 'wood' (source geometry) and adjust simulation parameters such as the color of the fire to achieve various looks.\n\n\n### Update:\n- Promoted to top level transform channels of builtin geometry.\n","created_utc_timestamp":1349812119,"type":"asset","creator":"SideFX","version_sequence_number":2,"node_type_name":"SideFX::bonfire","num_votes":3,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0xC645BAD2-0xD5BE11E9-0xA8F34485-0x00E5E016",
+						"default_folder":"Effect",
+						"icon":"SideFX__bonfire.png"
+					}
+				]
+			},
+			{
+				"guid":"0x38D5B706-0xD6A411E9-0x83EF4485-0x00E5E016",
+				"type":"folder",
+				"name":"Shader",
+				"entries":[
+				]
+			},
+			{
+				"type":"folder",
+				"name":"Recycle Bin",
+				"guid":"0x12345678-0x9ABCDEF0-0x12345678-0x9ABCDEFF",
+				"entries":[
+					{
+						"otl_file":"ssh__flipsolver_with_air_field.otl",
+						"rating":5,
+						"update_available":false,
+						"descriptive_name":"Flipsolver with air field",
+						"description":"Air field is a fantastic tool for FLIP fluids simulation.\n\nThe asset has the same inputs and parameters as standard flip solver with several extra parameters for air control.\nFor high-res simulations it is almost as fast as FLIP without air but with lots of extra details and features in your sim.\n\nPlease check sample videos and example scene.","created_utc_timestamp":1542075148,"default_folder":"Effect","creator":"ssh","version_sequence_number":9,"node_type_name":"ssh::flipsolver_with_air_field","num_votes":4,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0xC39C8E4C-0xD5BD11E9-0xA8F34485-0x00E5E016",
+						"type":"asset",
+						"icon":"ssh__flipsolver_with_air_field.png"
+					},
+					{
+						"otl_file":"gui2one__gui2one_vop_mandelbrot.otl",
+						"rating":0,
+						"update_available":false,
+						"descriptive_name":"gui2one_vop_mandelbrot",
+						"description":"A simple  implementation of a Mandelbrot set. I did this mainly to learn, but I discovered that with this implementation, you can zoom straight ahead, as opposed to   sesi implemantation , whre the zoom doesn't happen around the center point. ","created_utc_timestamp":1441705004,"default_folder":"Shader","creator":" gui2one","version_sequence_number":0,"node_type_name":"gui2one::gui2one_vop_mandelbrot","num_votes":0,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0x38D5B707-0xD6A411E9-0x83EF4485-0x00E5E016",
+						"type":"asset",
+						"icon":"gui2one__gui2one_vop_mandelbrot.png"
+					},
+					{
+						"otl_file":"_danylyon__PBR_layered_material.otl",
+						"rating":5,
+						"update_available":false,
+						"descriptive_name":"PBR layered Material",
+						"description":"This is a PBR only shader, created for realism. Its ideal for complex and realistic surfaces, such as metal, paint, wood, cloth, stone, rubber, glass, plastic ... and combinations of those.\n\nFor a detailed description see help card.\n\nThe example.hip needs extra files (textures, model), that can be downloaded here: http://seven-visions.com/tools/additionalfiles_05.zip\n","created_utc_timestamp":1486022292,"default_folder":"Shader","creator":" danylyon","version_sequence_number":16,"node_type_name":"_danylyon::PBR_layered_material","num_votes":9,"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0xA426D4E0-0xD6A411E9-0x83EF4485-0x00E5E016",
+						"type":"asset",
+						"icon":"_danylyon__PBR_layered_material.png"
+					},
+					{
+						"otl_file":"SideFX__snow.otl",
+						"rating":4,
+						"update_available":false,
+						"descriptive_name":"Snow",
+						"description":"This shader creates a snow look. Controls include color, displacement and sparkles frequency.",
+						"created_utc_timestamp":1385670189,
+						"type":"asset",
+						"creator":"SideFX",
+						"version_sequence_number":3,
+						"node_type_name":"SideFX::snow",
+						"num_votes":4,
+						"otl_dependents":[
+						],
+						"max_rating":5,
+						"guid":"0x53426BB4-0xD6AB11E9-0x83EF4485-0x00E5E016",
+						"default_folder":"Shader",
+						"icon":"SideFX__snow.png"
+					}
+				]
+			}
+		]
+	},
+	"version":1
+}

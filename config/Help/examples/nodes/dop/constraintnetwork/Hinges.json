@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["Hinges"]}, {"indent": 0, "type": "para", "extent": [0, 87], "text": ["This example demonstrates how to use pin constraints to create hinges between\nobjects."]}], "examplefile": "/examples/nodes/dop/constraintnetwork/Hinges.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/constraintnetwork"}

@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["FlockInPops"]}, {"indent": 0, "type": "para", "extent": [0, 92], "text": ["This example demonstrates how to control flocks of \nparticles by using the POP Flock node."]}], "examplefile": "/examples/nodes/dop/popflock/FlockInPops.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/popflock"}

@@ -1,0 +1,2379 @@
+// Magic: ca65b4f1
+// Automatically generated PSI dialog (PSI version 17.5.258)
+// Thu Sep 12 20:25:54 2019
+
+
+f_tmp = FLOAT_FIELD;	// dialog.top.ui
+keeppos.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+keeppos.gad = ROW
+{
+    
+
+    PARM_BUTTON("keeppos", "Keep Position When Parenting") toggle VALUE(keeppos.val);
+
+    {  }
+
+}
+
+pre_xform.gad = ROW
+{
+
+    {  }
+    { WIDTH(0.1) }
+
+    pre_xform.menu;
+}
+}	// Template join.bot
+
+xOrd.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+xOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Transform Order", "xOrd") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xOrd.menu;
+
+    {  }
+
+}
+
+rOrd.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    rOrd.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+t.gad = ROW
+{
+   HSTRETCH
+
+   t.label = PARM_LABEL("Translate", "t") WIDTH(1.5);
+   PARM(float, 3, "t", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(t.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_transform" VALUE(t.script_action)
+	HELP("Select an object to match the translation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+r.gad = ROW
+{
+   HSTRETCH
+
+   r.label = PARM_LABEL("Rotate", "r") WIDTH(1.5);
+   PARM(float, 3, "r", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_rotation" VALUE(r.script_action)
+	HELP("Select an object to match the rotation with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+s.gad = ROW
+{
+   HSTRETCH
+
+   s.label = PARM_LABEL("Scale", "s") WIDTH(1.5);
+   PARM(float, 3, "s", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(s.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_scale" VALUE(s.script_action)
+	HELP("Select an object to match the scale with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+p.gad = ROW
+{
+   HSTRETCH
+
+   p.label = PARM_LABEL("Pivot Translate", "p") WIDTH(1.5);
+   PARM(float, 3, "p", none, none, "X,Y,Z")
+	RANGE(0,1)  LABELREF(p.label)
+	HSTRETCH;
+
+    ACTION_ICONBUTTON "BUTTONS_match_pivot" VALUE(p.script_action)
+	HELP("Select an object to match the pivot with.")
+	UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+}
+
+scale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale.label = PARM_LABEL("Uniform Scale", "scale") WIDTH(1.5);
+ PARM(float, 1, "scale", none, none) RANGE(0,1)
+	 LABELREF(scale.label) HSTRETCH;
+
+}
+
+lookatpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ lookatpath.label = PARM_LABEL("Look At", "lookatpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "lookatpath") VALUE(lookatpath.val) 
+	LABELREF(lookatpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(lookatpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(lookatpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+lookup.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Look At Up Vector", "lookup") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    lookup.menu;
+
+    { HSTRETCH }
+
+}
+
+pathobjpath.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ pathobjpath.label = PARM_LABEL("Path Object", "pathobjpath") WIDTH(1.5);
+ PARM_FIELD(pathstring, "pathobjpath") VALUE(pathobjpath.val) 
+	LABELREF(pathobjpath.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(pathobjpath.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(pathobjpath.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+roll.gad = ROW
+{
+   HSTRETCH
+
+   roll.label = PARM_LABEL( "Roll", "roll" ) WIDTH(1.5);
+   PARM(float, 1, "roll", none, none) RANGE(-360, 360)
+	LABELREF( roll.label ) HSTRETCH;
+
+}
+
+pos.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pos.label = PARM_LABEL("Position", "pos") WIDTH(1.5);
+ PARM(float, 1, "pos", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(pos.label) HSTRETCH;
+
+}
+
+uparmtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Parameterization", "uparmtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    uparmtype.menu;
+
+    { HSTRETCH }
+
+}
+
+pathorient.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ pathorient.label = PARM_LABEL("Orient Along Path", "pathorient") WIDTH(1.5);
+ PARM(integer, 1, "pathorient", none, none) RANGE(0,1)
+	 LABELREF(pathorient.label) HSTRETCH;
+
+}
+
+up.gad = ROW 
+{
+    HSTRETCH
+
+    up.label = PARM_LABEL("Orient Up Vector", "up") WIDTH(1.5);
+    PARM(float, 3, "up", none, none) LABELREF(up.label)
+	HSTRETCH;
+
+}
+
+bank.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bank.label = PARM_LABEL("Auto-Bank factor", "bank") WIDTH(1.5);
+ PARM(float, 1, "bank", none, none) RANGE(-1,1)
+	 LABELREF(bank.label) HSTRETCH;
+
+}
+label1.gad = NULL { }
+label2.gad = NULL { }
+label3.gad = NULL { }
+label4.gad = NULL { }
+tdisplay.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+tdisplay.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+tdisplay.gad = PARM_BUTTON("tdisplay", "") toggle VALUE(tdisplay.val);
+
+display.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ display.label = PARM_LABEL("Display", "display") WIDTH(1.32);
+ PARM(integer, 1, "display", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(display.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+outputobj.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Output Transform", "outputobj") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    outputobj.menu;
+
+    { HSTRETCH }
+
+}
+
+visibleobjects.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ visibleobjects.label = PARM_LABEL("Visible Children", "visibleobjects") WIDTH(1.5);
+ PARM_FIELD (pathstring, "visibleobjects") LABELREF(visibleobjects.label) 
+	VALUE(visibleobjects.val) HSTRETCH;
+
+    visibleobjects.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(visibleobjects.plus) LOOKFLAT
+    HELP("Open floating bundle chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+picking.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("picking", "Viewport Selecting Enabled") toggle VALUE(picking.val);
+
+    { HSTRETCH }
+
+}
+
+pickscript.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ pickscript.label = PARM_LABEL("Select Script", "pickscript") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "pickscript") LABELREF(pickscript.label)
+	VALUE(pickscript.val) HSTRETCH;
+
+    pickscript.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(pickscript.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+caching.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("caching", "Cache Object Transform") toggle VALUE(caching.val);
+
+    { HSTRETCH }
+
+}
+use_dcolor.gad = NULL { }
+dcolor.gad = NULL { }
+
+sceneunits.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Scene Units", "sceneunits") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    sceneunits.menu;
+
+    { HSTRETCH }
+
+}
+
+sepparm.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+t2.gad = ROW
+{
+   HSTRETCH
+
+   t2.label = PARM_LABEL("Master Translate", "t2") WIDTH(1.5);
+   PARM(float, 3, "t2", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(t2.label)
+	HSTRETCH;
+
+}
+
+r2.gad = ROW
+{
+   HSTRETCH
+
+   r2.label = PARM_LABEL("Master Rotate", "r2") WIDTH(1.5);
+   PARM(float, 3, "r2", none, none, "X,Y,Z")
+	RANGE(0,360)  LABELREF(r2.label)
+	HSTRETCH;
+
+}
+
+s2.gad = ROW
+{
+   HSTRETCH
+
+   s2.label = PARM_LABEL("Master Scale", "s2") WIDTH(1.5);
+   PARM(float, 3, "s2", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(s2.label)
+	HSTRETCH;
+
+}
+
+scale2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ scale2.label = PARM_LABEL("Master Uniform Scale", "scale2") WIDTH(1.5);
+ PARM(float, 1, "scale2", none, none) RANGE(0,10)
+	 LABELREF(scale2.label) HSTRETCH;
+
+}
+
+sepparm3.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+usecustomfountaingeo.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usecustomfountaingeo", "Use Custom Fountain") toggle VALUE(usecustomfountaingeo.val);
+
+    { HSTRETCH }
+
+}
+
+customfountaingeo.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ customfountaingeo.label = PARM_LABEL("Custom Fountain Geo", "customfountaingeo") WIDTH(1.5);
+ PARM_FIELD(pathstring, "customfountaingeo") VALUE(customfountaingeo.val) 
+	LABELREF(customfountaingeo.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(customfountaingeo.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(customfountaingeo.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+usecustomemittergeo.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usecustomemittergeo", "Use Custom Emitter") toggle VALUE(usecustomemittergeo.val);
+
+    { HSTRETCH }
+
+}
+
+customemittergeo.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left,center)
+
+ customemittergeo.label = PARM_LABEL("Custom Emitter Geo", "customemittergeo") WIDTH(1.5);
+ PARM_FIELD(pathstring, "customemittergeo") VALUE(customemittergeo.val) 
+	LABELREF(customemittergeo.label) HSTRETCH;
+
+ ACTION_ICONBUTTON "BUTTONS_jump" VALUE(customemittergeo.jump)
+    HELP("Jump to operator\nCtrl+LMB: Open parameters popup dialog")
+    UI_FLAT_ICON_BTN_SIZE_SMALL LOOKFLAT;
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_node" VALUE(customemittergeo.plus)
+    HELP("Open floating operator chooser") UI_FLAT_ICON_BTN_SIZE_SMALL 
+    LOOKFLAT;
+
+}
+
+sepparm2.gad = 
+
+{
+    LAYOUT(vertical) HSTRETCH 
+
+    { HEIGHT(0.1) }
+    SEPARATOR; 
+    { HEIGHT(0.1) }
+}
+
+divsize.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ divsize.label = PARM_LABEL("Emitter Division", "divsize") WIDTH(1.5);
+ PARM(float, 1, "divsize", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(divsize.label) HSTRETCH;
+
+}
+
+v.gad = ROW
+{
+   HSTRETCH
+
+   v.label = PARM_LABEL("Emitter Velocity", "v") WIDTH(1.5);
+   PARM(float, 3, "v", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(v.label)
+	HSTRETCH;
+
+}
+
+vel_add_curl_noise.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vel_add_curl_noise", "Add Curl Noise") toggle VALUE(vel_add_curl_noise.val);
+
+    { HSTRETCH }
+
+}
+
+vel_turbtimedep.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("vel_turbtimedep", "Animated") toggle VALUE(vel_turbtimedep.val);
+
+    { HSTRETCH }
+
+}
+
+vel_turbscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turbscale.label = PARM_LABEL("Scale", "vel_turbscale") WIDTH(1.5);
+ PARM(float, 1, "vel_turbscale", none, none) RANGE(0,1)
+	 LABELREF(vel_turbscale.label) HSTRETCH;
+
+}
+
+vel_turbswirl.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turbswirl.label = PARM_LABEL("Swirl Size", "vel_turbswirl") WIDTH(1.5);
+ PARM(float, 1, "vel_turbswirl", none, none) RANGE(0,10)
+	 LABELREF(vel_turbswirl.label) HSTRETCH;
+
+}
+
+vel_turbrough.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turbrough.label = PARM_LABEL("Grain", "vel_turbrough") WIDTH(1.5);
+ PARM(float, 1, "vel_turbrough", none, none) RANGE(0,1)
+	 LABELREF(vel_turbrough.label) HSTRETCH;
+
+}
+
+vel_turboffset.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turboffset.label = PARM_LABEL("Offset", "vel_turboffset") WIDTH(1.5);
+ PARM(float, 1, "vel_turboffset", none, none) RANGE(0,10)
+	 LABELREF(vel_turboffset.label) HSTRETCH;
+
+}
+
+vel_turbatten.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turbatten.label = PARM_LABEL("Attenuation", "vel_turbatten") WIDTH(1.5);
+ PARM(float, 1, "vel_turbatten", none, none) RANGE(0,1)
+	 LABELREF(vel_turbatten.label) HSTRETCH;
+
+}
+
+vel_turboctaves.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ vel_turboctaves.label = PARM_LABEL("Turbulence", "vel_turboctaves") WIDTH(1.5);
+ PARM(integer, 1, "vel_turboctaves", none, none) RANGE(1,12)
+	 LABELREF(vel_turboctaves.label) HSTRETCH;
+
+}
+
+particlesep.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ particlesep.label = PARM_LABEL("Particle Separation", "particlesep") WIDTH(1.5);
+ PARM(float, 1, "particlesep", none, none) RANGE(0,10)
+	 LABELREF(particlesep.label) HSTRETCH;
+
+}
+
+radiusscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ radiusscale.label = PARM_LABEL("Particle Radius Scale", "radiusscale") WIDTH(1.5);
+ PARM(float, 1, "radiusscale", none, none) RANGE(0,10)
+	 LABELREF(radiusscale.label) HSTRETCH;
+
+}
+
+bounce.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bounce.label = PARM_LABEL("Bounce", "bounce") WIDTH(1.5);
+ PARM(float, 1, "bounce", none, none) RANGE(0,10)
+	 LABELREF(bounce.label) HSTRETCH;
+
+}
+
+friction.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ friction.label = PARM_LABEL("Friction", "friction") WIDTH(1.5);
+ PARM(float, 1, "friction", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(friction.label) HSTRETCH;
+
+}
+
+dynamicfriction.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dynamicfriction.label = PARM_LABEL("Dynamic Friction Scale", "dynamicfriction") WIDTH(1.5);
+ PARM(float, 1, "dynamicfriction", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(dynamicfriction.label) HSTRETCH;
+
+}
+
+density.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ density.label = PARM_LABEL("Density", "density") WIDTH(1.5);
+ PARM(float, 1, "density", none, none) RANGE(100,5000)
+	 LABELREF(density.label) HSTRETCH;
+
+}
+
+force.gad = ROW
+{
+   HSTRETCH
+
+   force.label = PARM_LABEL("Gravity", "force") WIDTH(1.5);
+   PARM(float, 3, "force", none, none, "X,Y,Z")
+	RANGE(-1,1)  LABELREF(force.label)
+	HSTRETCH;
+
+}
+
+dofoam.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dofoam", "Enable Foam") toggle VALUE(dofoam.val);
+
+    { HSTRETCH }
+
+}
+
+minfoamlife.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minfoamlife.label = PARM_LABEL("Min Lifespan", "minfoamlife") WIDTH(1.5);
+ PARM(float, 1, "minfoamlife", none, none) RANGE(0,10)
+	 LABELREF(minfoamlife.label) HSTRETCH;
+
+}
+
+maxfoamlife.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxfoamlife.label = PARM_LABEL("Max Lifespan", "maxfoamlife") WIDTH(1.5);
+ PARM(float, 1, "maxfoamlife", none, none) RANGE(0,10)
+	 LABELREF(maxfoamlife.label) HSTRETCH;
+
+}
+
+foamlifevar.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ foamlifevar.label = PARM_LABEL("Lifespan Variance", "foamlifevar") WIDTH(1.5);
+ PARM(float, 1, "foamlifevar", none, none) RANGE(0,10)
+	 LABELREF(foamlifevar.label) HSTRETCH;
+
+}
+
+foamcling.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ foamcling.label = PARM_LABEL("Water Cling", "foamcling") WIDTH(1.5);
+ PARM(float, 1, "foamcling", none, none) RANGE(0,10)
+	 LABELREF(foamcling.label) HSTRETCH;
+
+}
+
+preservefoam.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("preservefoam", "Preserve Foam") toggle VALUE(preservefoam.val);
+
+    { HSTRETCH }
+
+}
+
+minfoamdensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minfoamdensity.label = PARM_LABEL("Min Foam Density", "minfoamdensity") WIDTH(1.5);
+ PARM(float, 1, "minfoamdensity", none, none) RANGE(0,10)
+	 LABELREF(minfoamdensity.label) HSTRETCH;
+
+}
+
+maxfoamdensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxfoamdensity.label = PARM_LABEL("Max Foam Density", "maxfoamdensity") WIDTH(1.5);
+ PARM(float, 1, "maxfoamdensity", none, none) RANGE(0,10)
+	 LABELREF(maxfoamdensity.label) HSTRETCH;
+
+}
+
+foampreserverate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ foampreserverate.label = PARM_LABEL("Preservation Rate", "foampreserverate") WIDTH(1.5);
+ PARM(float, 1, "foampreserverate", none, none) RANGE(0,10)
+	 LABELREF(foampreserverate.label) HSTRETCH;
+
+}
+
+foamreducerate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ foamreducerate.label = PARM_LABEL("Reduction Rate", "foamreducerate") WIDTH(1.5);
+ PARM(float, 1, "foamreducerate", none, none) RANGE(0,10)
+	 LABELREF(foamreducerate.label) HSTRETCH;
+
+}
+
+minspeed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minspeed.label = PARM_LABEL("Min Speed", "minspeed") WIDTH(1.5);
+ PARM(float, 1, "minspeed", none, none) RANGE(0,10)
+	 LABELREF(minspeed.label) HSTRETCH;
+
+}
+
+maxspeed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxspeed.label = PARM_LABEL("Max Speed", "maxspeed") WIDTH(1.5);
+ PARM(float, 1, "maxspeed", none, none) RANGE(0,10)
+	 LABELREF(maxspeed.label) HSTRETCH;
+
+}
+
+dodepthlimit.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dodepthlimit", "Limit By Depth") toggle VALUE(dodepthlimit.val);
+
+    { HSTRETCH }
+
+}
+
+mindepth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ mindepth.label = PARM_LABEL("Min Depth", "mindepth") WIDTH(1.5);
+ PARM(float, 1, "mindepth", none, none) RANGE(-1,1)
+	 LABELREF(mindepth.label) HSTRETCH;
+
+}
+
+maxdepth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxdepth.label = PARM_LABEL("Max Depth", "maxdepth") WIDTH(1.5);
+ PARM(float, 1, "maxdepth", none, none) RANGE(0,2)
+	 LABELREF(maxdepth.label) HSTRETCH;
+
+}
+
+docurvature.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("docurvature", "Emit From Curvature") toggle VALUE(docurvature.val);
+
+    { HSTRETCH }
+
+}
+
+mincurvature.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ mincurvature.label = PARM_LABEL("Min Curvature", "mincurvature") WIDTH(1.5);
+ PARM(float, 1, "mincurvature", none, none) RANGE(0,100)
+	 LABELREF(mincurvature.label) HSTRETCH;
+
+}
+
+maxcurvature.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxcurvature.label = PARM_LABEL("Max Curvature", "maxcurvature") WIDTH(1.5);
+ PARM(float, 1, "maxcurvature", none, none) RANGE(0,100)
+	 LABELREF(maxcurvature.label) HSTRETCH;
+
+}
+
+maxangle.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxangle.label = PARM_LABEL("Max Velocity Angle", "maxangle") WIDTH(1.5);
+ PARM(float, 1, "maxangle", none, none) RANGE(0,90)
+	 LABELREF(maxangle.label) HSTRETCH;
+
+}
+
+doaccel.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doaccel", "Emit From Acceleration") toggle VALUE(doaccel.val);
+
+    { HSTRETCH }
+
+}
+
+minaccel.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minaccel.label = PARM_LABEL("Min Acceleration", "minaccel") WIDTH(1.5);
+ PARM(float, 1, "minaccel", none, none) RANGE(0,100)
+	 LABELREF(minaccel.label) HSTRETCH;
+
+}
+
+maxaccel.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxaccel.label = PARM_LABEL("Max Acceleration", "maxaccel") WIDTH(1.5);
+ PARM(float, 1, "maxaccel", none, none) RANGE(0,100)
+	 LABELREF(maxaccel.label) HSTRETCH;
+
+}
+
+dovorticity.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dovorticity", "Emit From Vorticity") toggle VALUE(dovorticity.val);
+
+    { HSTRETCH }
+
+}
+
+minvorticity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minvorticity.label = PARM_LABEL("Min Vorticity", "minvorticity") WIDTH(1.5);
+ PARM(float, 1, "minvorticity", none, none) RANGE(0,100)
+	 LABELREF(minvorticity.label) HSTRETCH;
+
+}
+
+maxvorticity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ maxvorticity.label = PARM_LABEL("Max Vorticity", "maxvorticity") WIDTH(1.5);
+ PARM(float, 1, "maxvorticity", none, none) RANGE(0,100)
+	 LABELREF(maxvorticity.label) HSTRETCH;
+
+}
+
+constantrate.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ constantrate.label = PARM_LABEL("Const. Birth Rate", "constantrate") WIDTH(1.5);
+ PARM(float, 1, "constantrate", none, none) RANGE(0,10)
+	 LABELREF(constantrate.label) HSTRETCH;
+
+}
+
+donoise.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("donoise", "Add Noise") toggle VALUE(donoise.val);
+
+    { HSTRETCH }
+
+}
+
+type.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Noise Type", "type") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    type.menu;
+
+    { HSTRETCH }
+
+}
+
+freq.gad = ROW
+{
+   HSTRETCH
+
+   freq.label = PARM_LABEL("Frequency", "freq") WIDTH(1.5);
+   PARM(float, 3, "freq", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(freq.label)
+	HSTRETCH;
+
+}
+
+offset2.gad = ROW
+{
+   HSTRETCH
+
+   offset2.label = PARM_LABEL("Offset", "offset2") WIDTH(1.5);
+   PARM(float, 3, "offset2", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(offset2.label)
+	HSTRETCH;
+
+}
+
+amp.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ amp.label = PARM_LABEL("Amplitude", "amp") WIDTH(1.5);
+ PARM(float, 1, "amp", none, none) RANGE(-1,1)
+	 LABELREF(amp.label) HSTRETCH;
+
+}
+
+rough.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ rough.label = PARM_LABEL("Roughness", "rough") WIDTH(1.5);
+ PARM(float, 1, "rough", none, none) RANGE(0,1)
+	 LABELREF(rough.label) HSTRETCH;
+
+}
+
+atten.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ atten.label = PARM_LABEL("Attenuation", "atten") WIDTH(1.5);
+ PARM(float, 1, "atten", none, none) RANGE(0,1)
+	 LABELREF(atten.label) HSTRETCH;
+
+}
+
+turb.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ turb.label = PARM_LABEL("Turbulence", "turb") WIDTH(1.5);
+ PARM(integer, 1, "turb", none, none) RANGE(0,10)
+	 LABELREF(turb.label) HSTRETCH;
+
+}
+
+bounce2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ bounce2.label = PARM_LABEL("Bounce", "bounce2") WIDTH(1.5);
+ PARM(float, 1, "bounce2", none, none) RANGE(0,10)
+	 LABELREF(bounce2.label) HSTRETCH;
+
+}
+
+friction2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ friction2.label = PARM_LABEL("Friction", "friction2") WIDTH(1.5);
+ PARM(float, 1, "friction2", none, none) RANGE(0,1)
+	 LABELREF(friction2.label) HSTRETCH;
+
+}
+
+dynamicfriction2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dynamicfriction2.label = PARM_LABEL("Dynamic Friction Scale", "dynamicfriction2") WIDTH(1.5);
+ PARM(float, 1, "dynamicfriction2", none, none) RANGE(0,1)
+	 LABELREF(dynamicfriction2.label) HSTRETCH;
+
+}
+
+animategeo.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("animategeo", "Use Deforming Geometry") toggle VALUE(animategeo.val);
+
+    { HSTRETCH }
+
+}
+
+usevolume.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usevolume", "Use Volume Based Collision Detection") toggle VALUE(usevolume.val);
+
+    { HSTRETCH }
+
+}
+
+fountaincollisionsuniformdiv.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ fountaincollisionsuniformdiv.label = PARM_LABEL("Volume Divisions", "fountaincollisionsuniformdiv") WIDTH(1.5);
+ PARM(integer, 1, "fountaincollisionsuniformdiv", none, none) RANGE(1,1000)
+	LOCK_RANGE_MIN LABELREF(fountaincollisionsuniformdiv.label) HSTRETCH;
+
+}
+
+offset.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ offset.label = PARM_LABEL("Offset Surface", "offset") WIDTH(1.5);
+ PARM(float, 1, "offset", none, none) RANGE(0,10)
+	 LABELREF(offset.label) HSTRETCH;
+
+}
+
+timescale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ timescale.label = PARM_LABEL("Timescale", "timescale") WIDTH(1.5);
+ PARM(float, 1, "timescale", none, none) RANGE(0,10)
+	 LABELREF(timescale.label) HSTRETCH;
+
+}
+
+minimumsubsteps.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ minimumsubsteps.label = PARM_LABEL("Minimum Substeps", "minimumsubsteps") WIDTH(1.5);
+ PARM(integer, 1, "minimumsubsteps", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(minimumsubsteps.label) HSTRETCH;
+
+}
+
+substeps.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ substeps.label = PARM_LABEL("Substeps", "substeps") WIDTH(1.5);
+ PARM(integer, 1, "substeps", none, none) RANGE(1,10)
+	LOCK_RANGE_MIN LABELREF(substeps.label) HSTRETCH;
+
+}
+
+cflcond.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ cflcond.label = PARM_LABEL("CFL Condition", "cflcond") WIDTH(1.5);
+ PARM(float, 1, "cflcond", none, none) RANGE(0,10)
+	 LABELREF(cflcond.label) HSTRETCH;
+
+}
+
+partcflcond.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ partcflcond.label = PARM_LABEL("Particle Advection CFL", "partcflcond") WIDTH(1.5);
+ PARM(float, 1, "partcflcond", none, none) RANGE(0,10)
+	 LABELREF(partcflcond.label) HSTRETCH;
+
+}
+
+doforces.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doforces", "Apply External Forces") toggle VALUE(doforces.val);
+
+    { HSTRETCH }
+
+}
+enablevolumeattrib.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+enablevolumeattrib.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+enablevolumeattrib.gad = PARM_BUTTON("enablevolumeattrib", "") toggle VALUE(enablevolumeattrib.val);
+
+volumeoverrideattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    volumeoverrideattrib.label = PARM_LABEL("Force Override", "volumeoverrideattrib") WIDTH(1.32);
+    PARM_FIELD(string, "volumeoverrideattrib") VALUE(volumeoverrideattrib.val) 
+	LABELREF(volumeoverrideattrib.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+underresolved.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Under-Resolved Particles", "underresolved") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    underresolved.menu;
+
+    { HSTRETCH }
+
+}
+
+collision.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Collision Detection", "collision") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    collision.menu;
+
+    { HSTRETCH }
+
+}
+
+killunmoveable.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("killunmoveable", "Kill Unmoveable Particles") toggle VALUE(killunmoveable.val);
+
+    { HSTRETCH }
+
+}
+
+tankcollision.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("tankcollision", "Collide with Volume Limits") toggle VALUE(tankcollision.val);
+
+    { HSTRETCH }
+
+}
+
+killoutside.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("killoutside", "Kill Outside Volume Limits") toggle VALUE(killoutside.val);
+
+    { HSTRETCH }
+
+}
+
+usephysparms.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("usephysparms", "Use Friction and Bounce") toggle VALUE(usephysparms.val);
+
+    { HSTRETCH }
+
+}
+
+doid.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doid", "Add ID Attribute") toggle VALUE(doid.val);
+
+    { HSTRETCH }
+
+}
+
+doage.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doage", "Age Particles") toggle VALUE(doage.val);
+
+    { HSTRETCH }
+
+}
+
+doreapparticles.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doreapparticles", "Reap Particles") toggle VALUE(doreapparticles.val);
+
+    { HSTRETCH }
+
+}
+
+delattribs.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    delattribs.label = PARM_LABEL("Delete Attributes", "delattribs") WIDTH(1.5);
+    PARM_FIELD(string, "delattribs") VALUE(delattribs.val) 
+	LABELREF(delattribs.label) HSTRETCH;
+
+}
+
+reseed.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("reseed", "Reseed Particles") toggle VALUE(reseed.val);
+
+    { HSTRETCH }
+
+}
+
+partpervoxel.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ partpervoxel.label = PARM_LABEL("Particles Per Voxel", "partpervoxel") WIDTH(1.5);
+ PARM(integer, 1, "partpervoxel", none, none) RANGE(0,10)
+	 LABELREF(partpervoxel.label) HSTRETCH;
+
+}
+
+oversampling.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ oversampling.label = PARM_LABEL("Surface Oversampling", "oversampling") WIDTH(1.5);
+ PARM(float, 1, "oversampling", none, none) RANGE(1,2)
+	 LABELREF(oversampling.label) HSTRETCH;
+
+}
+
+oversamplingbandwidth.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ oversamplingbandwidth.label = PARM_LABEL("Oversampling Bandwidth", "oversamplingbandwidth") WIDTH(1.5);
+ PARM(float, 1, "oversamplingbandwidth", none, none) RANGE(0,4)
+	 LABELREF(oversamplingbandwidth.label) HSTRETCH;
+
+}
+
+oversamplebounds.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("oversamplebounds", "Oversample At Boundaries") toggle VALUE(oversamplebounds.val);
+
+    { HSTRETCH }
+
+}
+
+birththreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ birththreshold.label = PARM_LABEL("Birth Threshold", "birththreshold") WIDTH(1.5);
+ PARM(float, 1, "birththreshold", none, none) RANGE(0,1)
+	 LABELREF(birththreshold.label) HSTRETCH;
+
+}
+
+deaththreshold.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ deaththreshold.label = PARM_LABEL("Death Threshold", "deaththreshold") WIDTH(1.5);
+ PARM(float, 1, "deaththreshold", none, none) RANGE(1,2)
+	 LABELREF(deaththreshold.label) HSTRETCH;
+
+}
+
+seed.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ seed.label = PARM_LABEL("Random Seed", "seed") WIDTH(1.5);
+ PARM(float, 1, "seed", none, none) RANGE(0,10)
+	LOCK_RANGE_MIN LABELREF(seed.label) HSTRETCH;
+
+}
+
+partsep.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("partsep", "Apply Particle Separation") toggle VALUE(partsep.val);
+
+    { HSTRETCH }
+
+}
+
+partsepiter.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ partsepiter.label = PARM_LABEL("Separation Iterations", "partsepiter") WIDTH(1.5);
+ PARM(integer, 1, "partsepiter", none, none) RANGE(0,10)
+	 LABELREF(partsepiter.label) HSTRETCH;
+
+}
+
+partsepamount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ partsepamount.label = PARM_LABEL("Separation Rate", "partsepamount") WIDTH(1.5);
+ PARM(float, 1, "partsepamount", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(partsepamount.label) HSTRETCH;
+
+}
+
+partsepscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ partsepscale.label = PARM_LABEL("Separation Scale", "partsepscale") WIDTH(1.5);
+ PARM(float, 1, "partsepscale", none, none) RANGE(0,10)
+	 LABELREF(partsepscale.label) HSTRETCH;
+
+}
+
+dodroplets.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("dodroplets", "Detect Droplets") toggle VALUE(dodroplets.val);
+
+    { HSTRETCH }
+
+}
+
+dropletmindensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dropletmindensity.label = PARM_LABEL("Min Particle Density", "dropletmindensity") WIDTH(1.5);
+ PARM(float, 1, "dropletmindensity", none, none) RANGE(0,2)
+	 LABELREF(dropletmindensity.label) HSTRETCH;
+
+}
+
+dropletmaxdensity.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dropletmaxdensity.label = PARM_LABEL("Max Particle Density", "dropletmaxdensity") WIDTH(1.5);
+ PARM(float, 1, "dropletmaxdensity", none, none) RANGE(0,2)
+	 LABELREF(dropletmaxdensity.label) HSTRETCH;
+
+}
+
+dropletbehavior.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Behavior", "dropletbehavior") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    dropletbehavior.menu;
+
+    { HSTRETCH }
+
+}
+
+dropletvelblend.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ dropletvelblend.label = PARM_LABEL("Velocity Blend", "dropletvelblend") WIDTH(1.5);
+ PARM(float, 1, "dropletvelblend", none, none) RANGE(0,1)
+	 LABELREF(dropletvelblend.label) HSTRETCH;
+
+}
+
+volumeamount.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ volumeamount.label = PARM_LABEL("Force Scale", "volumeamount") WIDTH(1.5);
+ PARM(float, 1, "volumeamount", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(volumeamount.label) HSTRETCH;
+
+}
+
+smoothing.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ smoothing.label = PARM_LABEL("Smoothing", "smoothing") WIDTH(1.5);
+ PARM(float, 1, "smoothing", none, none) RANGE(0,1)
+	LOCK_RANGE_MIN LABELREF(smoothing.label) HSTRETCH;
+
+}
+
+updatesurface.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Update Surface", "updatesurface") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    updatesurface.menu;
+
+    { HSTRETCH }
+
+}
+
+updatevel.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Update Velocity", "updatevel") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    updatevel.menu;
+
+    { HSTRETCH }
+
+}
+
+collisionvelscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ collisionvelscale.label = PARM_LABEL("Velocity Scale", "collisionvelscale") WIDTH(1.5);
+ PARM(float, 1, "collisionvelscale", none, none) RANGE(1,4)
+	 LABELREF(collisionvelscale.label) HSTRETCH;
+
+}
+
+veltype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Velocity Type", "veltype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    veltype.menu;
+
+    { HSTRETCH }
+
+}
+
+extrapdist.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ extrapdist.label = PARM_LABEL("Surface Extrapolation", "extrapdist") WIDTH(1.5);
+ PARM(float, 1, "extrapdist", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(extrapdist.label) HSTRETCH;
+
+}
+
+fractionmethod.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Volume Fraction Method", "fractionmethod") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    fractionmethod.menu;
+
+    { HSTRETCH }
+
+}
+
+numsupersamples.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ numsupersamples.label = PARM_LABEL("Samples Per Axis", "numsupersamples") WIDTH(1.5);
+ PARM(integer, 1, "numsupersamples", none, none) RANGE(1,4)
+	LOCK_RANGE_MIN LABELREF(numsupersamples.label) HSTRETCH;
+
+}
+usetransparency.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+usetransparency.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+usetransparency.gad = PARM_BUTTON("usetransparency", "") toggle VALUE(usetransparency.val);
+
+transparency.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ transparency.label = PARM_LABEL("Transparency", "transparency") WIDTH(1.32);
+ PARM(float, 1, "transparency", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(transparency.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+enablestick.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("enablestick", "Stick on Collision") toggle VALUE(enablestick.val);
+
+    { HSTRETCH }
+
+}
+
+stickscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ stickscale.label = PARM_LABEL("Stick Scale", "stickscale") WIDTH(1.5);
+ PARM(float, 1, "stickscale", none, none) RANGE(0,1)
+	LOCK_RANGE LABELREF(stickscale.label) HSTRETCH;
+
+}
+stickusemaxdist.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+stickusemaxdist.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+stickusemaxdist.gad = PARM_BUTTON("stickusemaxdist", "") toggle VALUE(stickusemaxdist.val);
+
+stickdist.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ stickdist.label = PARM_LABEL("Max Distance", "stickdist") WIDTH(1.32);
+ PARM(float, 1, "stickdist", none, none) RANGE(0,1)
+	 LABELREF(stickdist.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+stickusemaxcells.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+stickusemaxcells.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+stickusemaxcells.gad = PARM_BUTTON("stickusemaxcells", "") toggle VALUE(stickusemaxcells.val);
+
+stickcells.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ stickcells.label = PARM_LABEL("Max Cells", "stickcells") WIDTH(1.32);
+ PARM(float, 1, "stickcells", none, none) RANGE(0,1)
+	 LABELREF(stickcells.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+stickbias.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ stickbias.label = PARM_LABEL("Stick Bias", "stickbias") WIDTH(1.5);
+ PARM(float, 1, "stickbias", none, none) RANGE(0,1)
+	 LABELREF(stickbias.label) HSTRETCH;
+
+}
+
+sticknormalscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sticknormalscale.label = PARM_LABEL("Normal Scale", "sticknormalscale") WIDTH(1.5);
+ PARM(float, 1, "sticknormalscale", none, none) RANGE(0,1)
+	 LABELREF(sticknormalscale.label) HSTRETCH;
+
+}
+
+sticktangentscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ sticktangentscale.label = PARM_LABEL("Tangent Scale", "sticktangentscale") WIDTH(1.5);
+ PARM(float, 1, "sticktangentscale", none, none) RANGE(0,1)
+	 LABELREF(sticktangentscale.label) HSTRETCH;
+
+}
+stickusecontrolfield.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+stickusecontrolfield.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+stickusecontrolfield.gad = PARM_BUTTON("stickusecontrolfield", "") toggle VALUE(stickusecontrolfield.val);
+
+stickcontrolfield.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    stickcontrolfield.label = PARM_LABEL("Control Field", "stickcontrolfield") WIDTH(1.32);
+    PARM_FIELD(string, "stickcontrolfield") VALUE(stickcontrolfield.val) 
+	LABELREF(stickcontrolfield.label) HSTRETCH;
+
+}
+}	
+}	// Template join.bot
+
+
+viscosity.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("viscosity", "Enable Viscosity") toggle VALUE(viscosity.val);
+
+    { HSTRETCH }
+
+}
+
+doviscosity.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("doviscosity", "Viscosity by Attribute") toggle VALUE(doviscosity.val);
+
+    { HSTRETCH }
+
+}
+
+viscosityattrib.gad = ROW
+{
+    HSTRETCH JUSTIFY(left, center)
+
+    viscosityattrib.label = PARM_LABEL("Attribute Name", "viscosityattrib") WIDTH(1.5);
+    PARM_FIELD(string, "viscosityattrib") VALUE(viscosityattrib.val) 
+	LABELREF(viscosityattrib.label) HSTRETCH;
+
+}
+
+viscositymix.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Mix Method", "viscositymix") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    viscositymix.menu;
+
+    { HSTRETCH }
+
+}
+
+viscosityscale.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ viscosityscale.label = PARM_LABEL("Viscosity Scale", "viscosityscale") WIDTH(1.5);
+ PARM(float, 1, "viscosityscale", none, none) RANGE(0,10000)
+	 LABELREF(viscosityscale.label) HSTRETCH;
+
+}
+loadfromdisk.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+loadfromdisk.gad = ROW
+{
+    
+
+    PARM_BUTTON("loadfromdisk", "Load from Disk") toggle VALUE(loadfromdisk.val);
+
+    {  }
+
+}
+
+reload.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    {  }
+    { WIDTH(0.1) }
+
+    PARM_BUTTON("reload", "Reload Geometry")
+	push VALUE(reload.val);
+
+}
+}	// Template join.bot
+
+
+file.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ file.label = PARM_LABEL("Water Geometry", "file") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "file") LABELREF(file.label)
+	VALUE(file.val) HSTRETCH;
+
+    file.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(file.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+
+file2.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+ file2.label = PARM_LABEL("Foam Geometry ", "file2") WIDTH(1.5);
+
+ PARM_FIELD (pathstring, "file2") LABELREF(file2.label)
+	VALUE(file2.val) HSTRETCH;
+
+    file2.menu SIZE(0.26, 0.26) LOOK(menuiconbutton);
+
+ ACTION_ICONBUTTON "BUTTONS_chooser_file" VALUE(file2.plus) LOOKFLAT
+    HELP("Open floating file chooser") UI_FLAT_ICON_BTN_SIZE_SMALL;
+
+}
+execute.row.join =		
+{
+  LAYOUT(horizontal) HSTRETCH JUSTIFY(left, center)
+
+execute.gad = ROW
+{
+    JUSTIFY(left, center)
+
+    PARM_BUTTON("execute", "Render")
+	push VALUE(execute.val);
+
+}
+
+trange.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) 
+
+    PARM_LABEL_SIMPLE("Valid Frame Range", "trange") ;
+    { WIDTH(0.09) }
+
+    trange.menu;
+
+    {  }
+
+}
+}	// Template join.bot
+
+
+f.gad = ROW
+{
+   HSTRETCH
+
+   f.label = PARM_LABEL("Start/End/Inc", "f") WIDTH(1.5);
+   PARM(float, 3, "f", none, none, "#1,#2,#3")
+	RANGE(0,10)  LABELREF(f.label)
+	HSTRETCH;
+
+}
+
+xformtype.gad = 
+{
+    LAYOUT(horizontal) JUSTIFY(left, center) HSTRETCH
+
+    PARM_LABEL_SIMPLE("Transform", "xformtype") WIDTH(1.5);
+    { WIDTH(0.09) }
+
+    xformtype.menu;
+
+    { HSTRETCH }
+
+}
+
+mkpath.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("mkpath", "Create Intermediate Directories") toggle VALUE(mkpath.val);
+
+    { HSTRETCH }
+
+}
+
+initsim.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("initsim", "Initialize Simulation OPs") toggle VALUE(initsim.val);
+
+    { HSTRETCH }
+
+}
+
+saveretry.gad = 
+{
+ LAYOUT(horizontal) HSTRETCH
+
+ saveretry.label = PARM_LABEL("Save Retries", "saveretry") WIDTH(1.5);
+ PARM(integer, 1, "saveretry", none, none) RANGE(0,5)
+	LOCK_RANGE_MIN LABELREF(saveretry.label) HSTRETCH;
+
+}
+
+savebackground.gad = ROW
+{
+    HSTRETCH
+
+    { WIDTH(1.5) }
+    { WIDTH(0.08) }
+
+    PARM_BUTTON("savebackground", "Save in Background") toggle VALUE(savebackground.val);
+
+    { HSTRETCH }
+
+}
+pr.gad = NULL { }
+childcomp.gad = NULL { }
+constraints_on.gad = NULL { }
+constraints_path.gad = NULL { }
+lookupobjpath.gad = NULL { }
+
+folder1.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder1.gad"
+    { 
+	VALUE(folder1.gad.val) STRETCH(1,0)
+
+	TAB "Export to File"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    execute.row.join;		
+	    f.gad;		
+	    xformtype.gad;		
+	    mkpath.gad;		
+	    initsim.gad;		
+	    saveretry.gad;		
+	    savebackground.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+folder2_2_5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder2_2_5.gad"
+    { 
+	VALUE(folder2_2_5.gad.val) STRETCH(1,0)
+
+	TAB "Collisions"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    collisionvelscale.gad;		
+	    veltype.gad;		
+	    extrapdist.gad;		
+	    fractionmethod.gad;		
+	    numsupersamples.gad;		
+	    usetransparency.row.join;		
+	    enablestick.gad;		
+	    stickscale.gad;		
+	    stickusemaxdist.row.join;		
+	    stickusemaxcells.row.join;		
+	    stickbias.gad;		
+	    sticknormalscale.gad;		
+	    sticktangentscale.gad;		
+	    stickusecontrolfield.row.join;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Viscosity"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    viscosity.gad;		
+	    doviscosity.gad;		
+	    viscosityattrib.gad;		
+	    viscositymix.gad;		
+	    viscosityscale.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+folder6.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder6.gad"
+    { 
+	VALUE(folder6.gad.val) STRETCH(1,0)
+
+	TAB "Behavior"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    tankcollision.gad;		
+	    killoutside.gad;		
+	    usephysparms.gad;		
+	    doid.gad;		
+	    doage.gad;		
+	    doreapparticles.gad;		
+	    delattribs.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Reseeding"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    reseed.gad;		
+	    partpervoxel.gad;		
+	    oversampling.gad;		
+	    oversamplingbandwidth.gad;		
+	    oversamplebounds.gad;		
+	    birththreshold.gad;		
+	    deaththreshold.gad;		
+	    seed.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Separation"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    partsep.gad;		
+	    partsepiter.gad;		
+	    partsepamount.gad;		
+	    partsepscale.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Droplets"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    dodroplets.gad;		
+	    dropletmindensity.gad;		
+	    dropletmaxdensity.gad;		
+	    dropletbehavior.gad;		
+	    dropletvelblend.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+folder4.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder4.gad"
+    { 
+	VALUE(folder4.gad.val) STRETCH(1,0)
+
+	TAB "Substeps"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    timescale.gad;		
+	    minimumsubsteps.gad;		
+	    substeps.gad;		
+	    cflcond.gad;		
+	    partcflcond.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Particle Motion"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    doforces.gad;		
+	    enablevolumeattrib.row.join;		
+	    underresolved.gad;		
+	    collision.gad;		
+	    killunmoveable.gad;		
+	    folder6.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Volume Motion"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    volumeamount.gad;		
+	    smoothing.gad;		
+	    updatesurface.gad;		
+	    updatevel.gad;		
+	    folder2_2_5.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+folder1_5.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "folder1_5.gad"
+    { 
+	VALUE(folder1_5.gad.val) STRETCH(1,0)
+
+	TAB "Source Emission"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    minspeed.gad;		
+	    maxspeed.gad;		
+	    dodepthlimit.gad;		
+	    mindepth.gad;		
+	    maxdepth.gad;		
+	    docurvature.gad;		
+	    mincurvature.gad;		
+	    maxcurvature.gad;		
+	    maxangle.gad;		
+	    doaccel.gad;		
+	    minaccel.gad;		
+	    maxaccel.gad;		
+	    dovorticity.gad;		
+	    minvorticity.gad;		
+	    maxvorticity.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Point Replicate"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    constantrate.gad;		
+	    donoise.gad;		
+	    type.gad;		
+	    freq.gad;		
+	    offset2.gad;		
+	    amp.gad;		
+	    rough.gad;		
+	    atten.gad;		
+	    turb.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+emitter.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "emitter.gad"
+    { 
+	VALUE(emitter.gad.val) STRETCH(1,0)
+
+	TAB "Emitter"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    divsize.gad;		
+	    v.gad;		
+	    vel_add_curl_noise.gad;		
+	    vel_turbtimedep.gad;		
+	    vel_turbscale.gad;		
+	    vel_turbswirl.gad;		
+	    vel_turbrough.gad;		
+	    vel_turboffset.gad;		
+	    vel_turbatten.gad;		
+	    vel_turboctaves.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Water"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    particlesep.gad;		
+	    radiusscale.gad;		
+	    bounce.gad;		
+	    friction.gad;		
+	    dynamicfriction.gad;		
+	    density.gad;		
+	    force.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Foam"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    dofoam.gad;		
+	    minfoamlife.gad;		
+	    maxfoamlife.gad;		
+	    foamlifevar.gad;		
+	    foamcling.gad;		
+	    preservefoam.gad;		
+	    minfoamdensity.gad;		
+	    maxfoamdensity.gad;		
+	    foampreserverate.gad;		
+	    foamreducerate.gad;		
+	    folder1_5.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Fountain"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    bounce2.gad;		
+	    friction2.gad;		
+	    dynamicfriction2.gad;		
+	    animategeo.gad;		
+	    usevolume.gad;		
+	    fountaincollisionsuniformdiv.gad;		
+	    offset.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Solver"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(2p) SPACING(2p)
+	    folder4.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+stdswitcher3.gad = 
+{
+    LAYOUT(vertical) HSTRETCH
+
+    TABDIALOG2 "stdswitcher3.gad"
+    { 
+	VALUE(stdswitcher3.gad.val) STRETCH(1,0)
+
+	TAB "Controls"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    sceneunits.gad;		
+	    sepparm.gad;		
+	    t2.gad;		
+	    r2.gad;		
+	    s2.gad;		
+	    scale2.gad;		
+	    sepparm3.gad;		
+	    usecustomfountaingeo.gad;		
+	    customfountaingeo.gad;		
+	    usecustomemittergeo.gad;		
+	    customemittergeo.gad;		
+	    sepparm2.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Simulation"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    emitter.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+
+	TAB "Export"
+	{
+	    LAYOUT(vertical) STRETCH
+
+	    MARGIN(0.05) SPACING(2p)
+	    loadfromdisk.row.join;		
+	    file.gad;		
+	    file2.gad;		
+	    folder1.gad;		
+
+	    { STRETCH(1,1) LOOK(plain) }
+	}
+    } 
+}
+
+dialog_norm.gad = 
+{
+    LAYOUT(vertical) SPACING(0.02) HSTRETCH LOOK(plain) 
+    stdswitcher3.gad; 
+    pr.gad; 
+    childcomp.gad; 
+    constraints_on.gad; 
+    constraints_path.gad; 
+    lookupobjpath.gad; 
+} 
+// dialog.bot.ui
+
+extrastuffstowbar_minimize.val := 1;
+
+dialog = OPENNOTIFIER
+{
+    LAYOUT(vertical) SPACING(0.02) LOOK(bg) VALUE(open.val) HSTRETCH
+
+    { HEIGHT(1p) LOOK(bg) HSTRETCH }
+
+    dialog_norm.gad;
+}

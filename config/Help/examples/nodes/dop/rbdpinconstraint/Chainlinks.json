@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["Chainlinks"]}, {"indent": 0, "type": "para", "extent": [0, 89], "text": ["In this chain simulation, the individual chain links \nreact to one another in an RBD sim."]}], "examplefile": "/examples/nodes/dop/rbdpinconstraint/Chainlinks.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/rbdpinconstraint"}

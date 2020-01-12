@@ -1,0 +1,1 @@
+{"body": [{"indent": 0, "type": "title", "text": ["RiverBed"]}, {"indent": 0, "type": "para", "extent": [0, 98], "text": ["A simple river bed has a fluid source and fluid sink set up so that\nliquid rushes down the river."]}], "examplefile": "/examples/nodes/dop/fluidobject/RiverBed.otl", "type": "root", "attrs": {"type": "example"}, "examplefor": "/nodes/dop/fluidobject"}

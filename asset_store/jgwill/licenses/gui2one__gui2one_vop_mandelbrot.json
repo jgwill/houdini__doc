@@ -1,0 +1,8 @@
+{
+    "expires_utc_timestamp": null, 
+    "license_number": 241472, 
+    "node_type_name": "gui2one::gui2one_vop_mandelbrot", 
+    "owner": "jgwill", 
+    "category_name": "Vop", 
+    "allowed_use": "studio"
+}
