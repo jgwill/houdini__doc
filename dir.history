@@ -5,6 +5,7 @@ HIP
 /home/jgi/
 /home/jgi/nad.previz/x/x__lava__191217/
 /home/jgi/nad.previz/x/x__for_fun__191122/
+/home/jgi/nad.previz/x/x__mutagen__200109/
 }
 PIC
 {
@@ -43,7 +44,6 @@ OTL
 }
 MISC
 {
-$HIP/render/
 unix hwatermark -x 4 10 -m \"Wedge: $WEDGENUM\" `chs("vm_picture")` `chs("vm_picture")` $HFS/houdini/fonts/
 unix hwatermark -x 4 10 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
 unix hwatermark -x 4 9 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
@@ -55,6 +55,7 @@ unix hwatermark -x 4 4 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_take
 unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/
 unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM $ACTIVETAKE \" `` $HFS/houdini/fonts/
 $HIP/render/$HIPNAME/
+system "echo \$HQROOT/houdini_distros/
 }
 GAL
 {

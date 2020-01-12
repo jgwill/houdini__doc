@@ -64,7 +64,6 @@ OTL
 }
 MISC
 {
-$HIP/render/$HIPNAME/tst_$WEDGE_$ACTIVETAKE__$F4.jpg
 unix hwatermark -x 4 9 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
 unix hwatermark -x 4 8 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
 unix hwatermark -x 4 7 -m \"Wedge: $WEDGENUM\" `chs("/obj/topnet_glob/wedge_takes")` `chs("/obj/topnet_glob/wedge_takes")` $HFS/houdini/fonts/Helvetica-Bold.pfa 24
@@ -76,6 +75,7 @@ unix hwatermark -x 4 3 -m \"Wedge: $WEDGENUM $ACTIVETAKE \" `` $HFS/houdini/font
 $HIP/render/$HIPNAME/tst_$WEDGE__$WEDGENUM_$ACTIVETAKE__$F4.jpg
 $HIP/render/$HIPNAME/tst2_$WEDGE__$WEDGENUM_$ACTIVETAKE__$F4.jpg
 system "echo allo"
+system "echo \$HQROOT/houdini_distros/hfs.\$HQCLIENTARCH"
 }
 GAL
 {
